@@ -1,5 +1,8 @@
 package org.launchcode.models;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 /**
  * Created by LaunchCode
  */
@@ -7,7 +10,8 @@ public class Job {
 
     private int id;
     private static int nextId = 1;
-
+@NotNull
+@Size(min=3, message="Must not be blank")
     private String name;
     private Employer employer;
     private Location location;
